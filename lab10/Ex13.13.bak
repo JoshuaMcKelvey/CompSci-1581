@@ -1,0 +1,41 @@
+;; <Your name here>
+;; Lab Exercise 10 -- Text Exercise 13.13
+;; CS 1581 Honors Computer Science I
+;; Fall 2012
+
+(module Ex13.13 racket
+
+  (provide make-queue
+           empty-queue?
+	   head
+	   enqueue!
+	   dequeue!)
+
+  ;; ********************************************************************
+  ;; Exercise 13.13, p. 453
+
+  (define make-queue
+    (lambda ()
+      "Your definition of make-queue goes here"))
+  
+  (define empty-queue?
+    (lambda (queue)
+      "Your definition of empty-queue? goes here"))
+
+  (define head
+    (lambda (queue)
+      "Your definition of head goes here"))
+
+  (define enqueue!
+    (lambda (queue new-item)
+      "Your definition of enqueue! goes here"))
+
+  (define dequeue!
+    (lambda (queue)
+      "Your definition of dequeue! goes here"))
+
+
+  ;; Any supporting non-ADT operations here:
+
+
+)

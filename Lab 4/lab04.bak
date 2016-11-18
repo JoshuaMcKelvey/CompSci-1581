@@ -1,0 +1,37 @@
+;; <Your name here>
+;; Lab Exercise 4
+;; CS 1581 Honors Computer Science I
+;; <Semester and year here, e.g. Fall 2012>
+
+(module lab04 racket
+
+  (provide my-curve
+	   triangle
+	   sierpinskis-gasket)
+
+  (require (lib "fungraph.ss" "concabs"))
+
+  (set-default-image-size! 300)
+
+  ;; *****************************************************************
+  ;; Exercise 4.8, p. 99
+
+  (define my-curve
+    (lambda (x0 y0 x1 y1 level)
+      "lambda expression for my-curve goes here"))
+
+  ; *****************************************************************
+  ;; Exercise 4.9, p. 99
+
+  (define triangle
+    (lambda (x0 y0 x1 y1 x2 y2)
+      "lambda expression for triangle goes here"))
+
+  ; *****************************************************************
+  ;; Exercise 4.10, p. 99
+
+  (define sierpinskis-gasket
+    (lambda (x0 y0 x1 y1 x2 y2 level)
+      "lambda expression for sierpinskis-gasket goes here"))
+
+)

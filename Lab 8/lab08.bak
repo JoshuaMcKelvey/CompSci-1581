@@ -1,0 +1,83 @@
+;; <Your name here>
+;; Lab Exercise 8
+;; CS 1581 Honors Computer Science I
+;; <Semester and year here, e.g. Fall 2012>
+
+(module lab08 racket
+
+  (provide movies-satisfying
+	   director-is-actor?
+	   the-only-element-in
+	   actors-action
+	   all-movies-for-actor-action
+	   substitutions-in-to-match
+	   matches?)
+
+  (require "movie-database.scm")
+  (require "movie-adts.scm")
+
+  ;; **************************************************************
+  ;; Exercise 7.24, p. 190
+
+  (define movies-satisfying          
+    (lambda (movies pred selector)
+      "definition of movies-satisfying goes here"))
+
+  ;; An added problem for 7.24
+  (define director-is-actor?
+    (lambda (movie)
+      "definition of director-is-actor? goes here"))
+
+
+  ;; **************************************************************
+  ;; Exercise 7.26, p. 197
+
+  (define substitutions-in-to-match
+    (lambda (pattern query)
+      "definition of substitutions-in-to-match goes here"))
+
+  ;; **************************************************************
+  ;; Exercise 7.27, p. 197
+
+  ;; You don't have to write any code for this exercise, just run the
+  ;; test file.
+
+
+  ;; **************************************************************
+  ;; Exercise 7.28, p. 197
+
+  (define the-only-element-in
+    (lambda (lst)
+      "definition of the-only-element-in goes here"))
+
+
+  ;; **************************************************************
+  ;; Exercise 7.25, p. 196
+
+  (define actors-action
+    (lambda (title)
+      "definition of actors-action goes here"))
+
+  (define all-movies-for-actor-action
+    (lambda (actor)
+      "definition of all-movies-for-actor-action goes here"))
+
+  ;; **************************************************************
+  ;; matches? is provided to run the tests
+
+  (define matches?
+    (lambda (pattern question)
+      (cond ((null? pattern)  (null? question))
+	    ((null? question) #f)
+	    ((list? (car pattern))
+	     (if (member (car question) (car pattern))
+		 (matches? (cdr pattern)
+			   (cdr question))
+		 #f))
+	    ((equal? (car pattern) '...) #t)
+	    ((equal? (car pattern) (car question))
+	     (matches? (cdr pattern)
+		       (cdr question)))
+	    (else #f))))
+
+)

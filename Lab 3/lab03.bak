@@ -1,0 +1,46 @@
+;; <Your name here>
+;; Lab Exercise 3
+;; CS 1581 Honors Computer Science I
+;; <Semester and year here, e.g. Fall 2012>
+
+(module lab03 racket
+
+  (provide sum-of-divisors-eff
+	   renumber
+	   survives?
+	   first-survivor-after
+	   divides?)
+
+  (define divides?   ; Required for Ex. 3.6
+    (lambda (a b)
+      (= (remainder b a) 0)))
+
+  ;; **************************************************************
+  ;; Exercise 3.6, p. 60
+
+  (define sum-of-divisors-eff 
+    (lambda (n) 
+      "lambda body goes here" ))
+
+  ;; **************************************************************
+  ;; Exercise 3.10, p. 68                                     
+
+  (define renumber
+    (lambda (position n)
+      "lambda body goes here"))
+
+  ;; **************************************************************
+  ;; Exercise 3.11, p. 68                                            
+
+  (define survives?
+    (lambda (position n)
+      "lambda body goes here"))
+
+  ;; **************************************************************
+  ;; Exercise 3.12, p. 68                                                           
+
+  (define first-survivor-after
+    (lambda (position n)
+      "lambda body goes here"))
+
+)

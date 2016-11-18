@@ -1,0 +1,48 @@
+;; <Your name here>
+;; Lab Exercise 7
+;; CS 1581 Honors Computer Science I
+;; <Semester and year here, e.g. Fall 2012>
+
+(module lab07 racket
+
+  (provide integers-from-to
+	   count
+	   count-satisfying
+           my-list-ref
+           position)
+
+  ;; **************************************************************
+  ;; Exercise 7.4, p. 172
+
+  (define integers-from-to ;; Must be iterative
+    (lambda (low high)
+      "definition of integers-from-to goes here")
+
+  ;; **************************************************************
+  ;; Exercise 7.6, p. 173
+
+  ;; Part a
+  (define count            ; counts number of times item occurs
+    (lambda (item lst)     ; in lst
+      "definition of count goes here"))
+
+  ;; Part b
+  (define count-satisfying ; counts number of items occur in lst
+    (lambda (pred? lst)    ; that satisfy pred?
+      "definition of count-satisfying goes here"))
+
+  ;; **************************************************************
+  ;; Exercise 7.7, p. 174
+
+  (define my-list-ref
+    (lambda (lst n)
+      "definition of my-list-ref goes here"))
+
+  ;; **************************************************************
+  ;; Exercise 7.8e, p. 174
+  
+  (define position
+    (lambda (element lst)
+      "definition of position goes here"))
+
+)

@@ -1,0 +1,54 @@
+;; <Your name here>
+;; Lab Exercise 5
+;; CS 1581 Honors Computer Science I
+;; <Semester and year here, e.g. Fall 2012>
+
+(module lab05 racket
+
+  (provide sum-func
+	   make-exponentiator
+	   make-series
+	   make-verifier
+	   f-upc)
+
+
+  ;; ****************************************************************************
+  ;; Exercise 5.6, p. 113
+
+  (define sum-func
+    (lambda (low high f)
+      "sum-func definition goes here"))
+
+
+  ;; ****************************************************************************
+  ;; Exercise 5.7, p. 119
+
+  (define make-exponentiator
+    (lambda (e)
+      "make-exponentiator definition goes here"))
+
+
+  ;; ****************************************************************************
+  ;; Exercise 5.8, p. 120
+
+  (define make-series
+    (lambda (f)
+      "make-series definition goes here"))
+
+
+  ;; ****************************************************************************
+  ;; Exercise 5.11, p. 121
+
+  (define make-verifier
+    (lambda (f m)
+      "make-verifier definition goes here"))
+
+
+  ;; ****************************************************************************
+  ;; Exercise 5.12, p. 122
+
+  (define f-upc 
+    (lambda (i di)
+      "f-upc definition goes here"))
+
+)

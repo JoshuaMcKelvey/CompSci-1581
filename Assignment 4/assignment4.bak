@@ -1,0 +1,210 @@
+;; <Your name here>
+;; Assignment 4
+;; CS 1581 Honors Computer Science I
+;; <Semester and year here, e.g. Fall 2012>
+
+(module assignment4 racket
+
+  (provide movies-satisfying
+	   director-is-actor?
+	   the-only-element-in
+
+	   director-action
+	   actors-action
+	   all-movies-for-actor-action
+	   made-in-year-action
+	   movies-before-after-action
+	   movies-between-action
+	   when-made-action
+	   appear-in-between-action
+	   direct-between-action
+	   word-in-title-action
+	   director-and-star-action
+	   two-stars-action
+
+	   matches?
+	   substitutions-in-to-match
+
+	   redefine-actors-action-for-7.33
+
+	   redefine-matches?-for-7.29
+	   redefine-substitutions-in-to-match-for-7.30
+	   redefine-matches?-for-7.34
+	   redefine-substitutions-in-to-match-for-7.34
+	   redefine-matches?-for-7.37
+	   redefine-substitutions-in-to-match-for-7.37
+	   redefine-substitutions-in-to-match-for-7.35)
+
+  (require "movie-database.scm")
+  (require "movie-adts.scm")
+
+;; **************************************************************
+;; Preliminary: Copy your procedures from Lab 8
+
+  (define movies-satisfying ... )
+
+  (define director-is-actor? ... )
+
+  (define substitutions-in-to-match ... )
+
+  (define the-only-element-in ... )
+
+  (define actors-action ... )
+
+  (define all-movies-for-actor-action ... )
+
+;; ************************************************************************
+;; You will be enhancing this matches? predicate which is provided by the text.
+
+  (define matches?
+    (lambda (pattern question)
+      (cond ((null? pattern)  (null? question))
+	    ((null? question) #f)
+	    ((list? (car pattern))
+	     (if (member (car question) (car pattern))
+		 (matches? (cdr pattern)
+			   (cdr question))
+		 #f))
+	    ((equal? (car pattern) '...) #t)
+	    ((equal? (car pattern) (car question))
+	     (matches? (cdr pattern)
+		       (cdr question)))
+	    (else #f))))
+
+;; ************************************************************************
+;; You will also be enhancing other procedures defined here.
+;; To redefine an already defined name use the "redefine" macro
+;; defined here:
+
+  (define-syntax-rule (redefine symbol value)
+    (set! symbol value))
+
+;; Example: if foo has already been defined as a procedure, use
+;;
+;;    (redefine foo (lambda ... ))
+;;
+;; to redefine it.  This is necessary because modules do not allow 
+;; the "define" form to be used more than once on a name.
+
+;; ************************************************************************
+;; exercise 7.29
+
+  (define redefine-matches?-for-7.29
+    (lambda ()
+      (redefine matches?                   
+        (lambda (pattern question)
+	  "re-definition of matches? goes here"))))
+
+
+  ;; ************************************************************************
+  ;; exercise 7.30    
+
+  (define redefine-substitutions-in-to-match-for-7.30
+    (lambda ()
+      (redefine substitutions-in-to-match     
+	(lambda (pattern question)
+	  "re-definition of substitutions-in-to-match goes here"))))
+
+  (define made-in-year-action
+    (lambda (noun verb year)
+      "definition of made-in-year-action goes here"))
+
+  ;; ************************************************************************
+  ;; Exercise 7.31
+
+  (define movies-before-after-action 
+    (lambda (noun verb preposition year)
+      "definition of movies-before-after-action goes here"))
+
+  ;; ************************************************************************
+  ;; Exercise 7.32
+
+  (define movies-between-action 
+    (lambda (noun verb low high)
+      "definition of movies-between-action goes here"))
+
+
+  ;; ************************************************************************
+  ;; Exercise 7.33
+
+  (define director-action  ; an enhancement of the movie director action
+    (lambda (title)        ; given on p. 197 of the text
+      "definition of director-action goes here"))
+
+  (define redefine-actors-action-for-7.33
+    (lambda ()
+      (redefine actors-action  ; modified for ex. 7.33
+	 (lambda (title)
+	   "re-definition of actors-action goes here"))))
+
+
+  ;; ************************************************************************
+  ;; Exercise 7.34
+
+  (define redefine-matches?-for-7.34
+    (lambda ()
+      (redefine matches?
+        (lambda (pattern question)
+	  "re-definition of matches? goes here"))))
+
+  (define redefine-substitutions-in-to-match-for-7.34
+    (lambda ()
+      (redefine substitutions-in-to-match     
+         (lambda (pattern question)
+	   "re-definition of substitutions-in-to-match goes here"))))
+
+  (define when-made-action
+    (lambda (title)
+      "definition of when-made-action goes here"))
+
+
+  ;; ************************************************************************
+  ;; Exercise 7.36
+
+  (define appear-in-between-action
+    (lambda (noun verb actor low high)
+      "definition of appear-in-between-action goes here"))
+
+  (define direct-between-action
+    (lambda (noun verb director low high)
+      "definition of direct-between-action goes here"))
+
+
+  ;; ************************************************************************
+  ;; Exercise 7.37
+
+  (define redefine-matches?-for-7.37
+    (lambda ()
+      (redefine matches?                   
+        (lambda (pattern question)
+	  "re-definition of matches? goes here"))))
+
+  (define redefine-substitutions-in-to-match-for-7.37
+    (lambda ()
+      (redefine substitutions-in-to-match     
+	(lambda (pattern question)
+	  "re-definition of substitutions-in-to-match goes here"))))
+
+  (define word-in-title-action
+    (lambda (noun verb word)
+      "definition of word-in-title-action goes here"))
+
+
+  ;; ************************************************************************
+  ;; Exercise 7.35
+
+  (define redefine-substitutions-in-to-match-for-7.35
+    (lambda ()
+      (redefine substitutions-in-to-match     
+	(lambda (pattern question)
+	  "re-definition of substitutions-in-to-match goes here"))))
+
+  (define director-and-star-action
+    (lambda (noun director star)
+      "definition of director-and-star-action goes here"))
+
+  (define two-stars-action
+    (lambda (noun star1 star2)
+      "definition of two-stars-action goes here"))
+
+)
